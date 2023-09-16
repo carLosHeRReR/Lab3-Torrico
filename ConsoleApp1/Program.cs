@@ -16,7 +16,15 @@ class Program
             Console.WriteLine(item.IdTrabajador + "\t" + item.Nombre + "\t" + item.Apellido + "\t" + item.Sueldo + "\t" + item.FechaNacimiento);
         }
 
+        Console.WriteLine("--------------------------------------------------"); // Separador
+
+        var list2 = ListarTrabajadoresDataTable();
+        foreach (DataRow row in list2.Rows)
+        {
+            Console.WriteLine(row["IdTrabajador"] + "\t" + row["Nombre"] + "\t" + row["Apellido"] + "\t" + row["Sueldo"] + "\t" + row["FechaNacimiento"]);
+        }
     }
+
 
     //De forma desconectada
     private static DataTable ListarTrabajadoresDataTable()
